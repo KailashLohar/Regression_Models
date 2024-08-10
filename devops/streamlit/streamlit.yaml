@@ -1,0 +1,25 @@
+name: streamlit_env
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pytorch
+  - streamlit
+  - rdkit
+  - pandas
+  - numpy
+  - seaborn
+  - tqdm
+  - pip
+  - pip:
+      - jupyterlab
+      - scikit-learn
+      - matplotlib
+      - ogb
+      - imblearn
+      - torch-geometric
+      - torch_optimizer
+      - standardiser
+

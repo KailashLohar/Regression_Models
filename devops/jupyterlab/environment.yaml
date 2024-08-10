@@ -1,0 +1,31 @@
+name: classification
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8.10
+  - pytorch
+  - rdkit
+  - openbabel  
+  - numpy
+  - tqdm
+  - pandas
+  - scipy
+  - pip
+  - pip:
+    - jupyterlab
+    - ipywidgets
+    - ipython-sql
+    - scikit-learn
+    - graphviz
+    - rdkit-pypi
+    - matplotlib
+    - seaborn
+    - torch-geometric
+    - ogb
+    - torch_optimizer
+    - imblearn
+    - torch_lr_finder
+    - standardiser
+

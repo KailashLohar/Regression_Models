@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  jupyterlab:
+    build:
+      context: ./jupyterlab
+      dockerfile: Dockerfile
+    image: "${JP_IMAGE}"
+    container_name: "${JP_CONTAINER}"
+    ports:
+      - "${JP_PORT}:7777"
+    volumes:
+      - "../main:/home"
+    labels:
+      - "description=Jupyterlab for MLModel"
+      - "port=7777"
+
+  streamlit:
+    build:
+      context: ./streamlit
+      dockerfile: Dockerfile
+    image: "${SL_IMAGE}"
+    container_name: "${SL_CONTAINER}"
+    ports:
+      - "${SL_PORT}:8501"
+    volumes:
+      - "../main/my_streamlit_app:/home"
+    labels:
+      - "description=Streamlit App"
+      - "port=8501"
