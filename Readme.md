@@ -47,7 +47,7 @@ Note: Make sure you have Docker installed on your system.
 
 5. ![#ffa500](https://via.placeholder.com/15/ffa500/ffa500.png) Stop the Container using command: `make stop-container`
 
-![Docker](devops/readme_images/docker_reg.png)
+![Docker](devops/readme_images/reg.png)
 
 
 

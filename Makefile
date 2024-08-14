@@ -40,7 +40,7 @@ start-container:
 		echo "Successfully started container: \033[1;32m$(JP_CONTAINER)\033[0m"; \
 		JP_URL="http://127.0.0.1:$(JP_PORT)"; echo "JupyterLab is running at: \033[1;34m$$JP_URL\033[0m"; \
 		echo "Successfully started container: \033[1;32m$(MF_CONTAINER)\033[0m"; \
-		MF_URL="http://127.0.0.1:$(MF_PORT)"; echo "Streamlit is running at: \033[1;34m$$MF_URL\033[0m"; \
+		MF_URL="http://127.0.0.1:$(MF_PORT)"; echo "MLflow is running at: \033[1;34m$$MF_URL\033[0m"; \
 		echo "Successfully started container: \033[1;32m$(PG_CONTAINER)\033[0m"; \
 		echo "Successfully started container: \033[1;32m$(SL_CONTAINER)\033[0m"; \
 		SL_URL="http://127.0.0.1:$(SL_PORT)"; echo "Streamlit is running at: \033[1;34m$$SL_URL\033[0m"; \
