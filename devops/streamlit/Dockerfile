@@ -1,28 +1,23 @@
 # Base image
-FROM condaforge/miniforge3:latest
+FROM --platform=linux/arm64/v8 ubuntu:22.04
 
 # Set Label
 LABEL maintainer="Kailash Lohar <kailashlohariitkgp@gmail.com>"
 
-# Set environment variables to avoid tzdata prompt
-ENV DEBIAN_FRONTEND=noninteractive
-ENV TZ=Etc/UTC
-
 # Set Working Directory
 WORKDIR /home
 
-# Install Utilities with --no-install-recommends
-RUN apt-get --allow-releaseinfo-change update && \
-    apt-get install -y --no-install-recommends tzdata make cmake wget unzip curl git procps python3 python3-pip && \
-    rm -rf /var/lib/apt/lists/* && apt-get clean
+# Install Utilities
+RUN apt-get update && apt-get install -y wget curl git python3 python3-pip && \
+    wget -O miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh && \
+    bash miniconda.sh -b -p /miniconda && rm miniconda.sh && rm -rf /var/lib/apt/lists/*
+ENV PATH /miniconda/bin:$PATH
+RUN conda init bash
 COPY streamlit.yaml .
 RUN conda env create -f streamlit.yaml && conda clean --all --yes
-
-# Set the shell to use the conda environment
-SHELL ["conda", "run", "-n", "streamlit_env", "/bin/bash", "-c"]
 
 # Expose Streamlit Port
 EXPOSE 8501
 
 # Set Entry Point
-ENTRYPOINT ["conda", "run", "-n", "streamlit_env", "streamlit", "run", "main.py", "--server.port", "8501"]
+CMD ["/bin/bash", "-c", "source /miniconda/etc/profile.d/conda.sh && conda activate streamlit_env && streamlit run main.py --server.port 8501"]

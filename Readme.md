@@ -1,7 +1,7 @@
 # Regression Models
 This repository offers a complete solution for designing, training, and deploying Graph Neural Network (GNN) and Random Forest (RF) models. It includes Docker configurations, Jupyter notebooks, and a Streamlit app for easy model deployment. Users can upload data to the app, receive predictions from pre-trained models, and view visualizations of molecular structures and model performance. The project is organized for ease of use, from Docker setup to model deployment, providing a streamlined approach for implementing machine learning models.
 
-![Title PNG](devops/readme_images/title.png)
+![Title PNG](devops/readme_images/title_new.png)
 
 ## Project Structure
 
@@ -47,7 +47,7 @@ Note: Make sure you have Docker installed on your system.
 
 5. ![#ffa500](https://via.placeholder.com/15/ffa500/ffa500.png) Stop the Container using command: `make stop-container`
 
-![Docker](devops/readme_images/reg.png)
+![Docker](devops/readme_images/docker_reg.png)
 
 
 

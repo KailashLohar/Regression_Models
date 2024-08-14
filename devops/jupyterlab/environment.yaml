@@ -7,11 +7,11 @@ dependencies:
   - python=3.8.10
   - pytorch
   - rdkit
-  - openbabel  
   - numpy
   - tqdm
   - pandas
   - scipy
+  - graphviz
   - pip
   - pip:
     - jupyterlab
@@ -28,4 +28,5 @@ dependencies:
     - imblearn
     - torch_lr_finder
     - standardiser
+    - mlflow
 
